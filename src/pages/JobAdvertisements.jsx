@@ -1,50 +1,43 @@
-import React from "react";
-import Card from "react-bootstrap/Card";
-import CardDeck from "react-bootstrap/CardDeck";
+import { React, useState, useEffect } from "react";
+import Table from "react-bootstrap/Table";
+import { Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import JobAdvertisementService from "../services/JobAdvertisementService";
 
 export default function JobAdvertisements() {
+  const [advertisements, setAdvertisements] = useState([]);
+
+  useEffect(() => {
+    let jobAdvertisementService = new JobAdvertisementService();
+    jobAdvertisementService
+      .getAll()
+      .then((result) => setAdvertisements(result.data.data));
+  }, []);
+
   return (
-    <CardDeck>
-      <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
-      <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This card has supporting text below as a natural lead-in to
-            additional content.{" "}
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
-      <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This card has even longer content than the
-            first to show that equal height action.
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
-    </CardDeck>
+    <Table striped bordered hover variant="dark">
+      <thead>
+        <tr>
+          <th>Position Name</th>
+          <th>Company Name</th>
+          <th>City</th>
+          <th>Description</th>
+          <th>Deadline Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {advertisements.map((advertisement) => (
+          <tr>
+            <td>{advertisement.position.name}</td>
+            <td>{advertisement.employer.companyName}</td>
+            <td>{advertisement.city.name}</td>
+            <td>{`${advertisement.description.substring(0,10)}...`}</td>
+            <td>{advertisement.deadlineDate.substring(0,10)}</td>
+            <td><Button as={NavLink} to={`/advertisements/${advertisement.id}`}>Detaya Git</Button></td>
+          </tr>
+        ))}
+      </tbody>
+    </Table>
   );
 }
