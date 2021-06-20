@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from "react";
+import { React, useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import JobAdvertisementService from "../services/JobAdvertisementService";
 import Carousel from "react-multi-carousel";
@@ -9,7 +9,7 @@ export default function SponsoredJobAdvertisement() {
   useEffect(() => {
     let jobAdvertisementService = new JobAdvertisementService();
     jobAdvertisementService
-      .getAll()
+      .getRandomTen()
       .then((result) => setSponsoredAdvertisements(result.data.data));
   }, []);
 
@@ -48,15 +48,23 @@ export default function SponsoredJobAdvertisement() {
       partialVisible
       renderButtonGroupOutside
     >
-        {sponsoredAdvertisements.map((advertisement) => (
-            <Card>
-            <Card.Body>
-              <Card.Title>{advertisement.position.name}</Card.Title>
+      {sponsoredAdvertisements.map((advertisement) => (
+        <Card>
+          <Card.Body>
+            <Card.Title>{advertisement.position.name}</Card.Title>
+            {advertisement.description.length > 30 ? (
+              <Card.Text>{`${advertisement.description.substring(
+                0,
+                30
+              )}...`}</Card.Text>
+            ) : (
               <Card.Text>{advertisement.description}</Card.Text>
-              <Button variant="primary">Detaya Git</Button>
-            </Card.Body>
-          </Card>
-        ))}
+            )}
+
+            <Button className="custom-btn" >Detaya Git</Button>
+          </Card.Body>
+        </Card>
+      ))}
     </Carousel>
   );
 }
