@@ -1,7 +1,5 @@
-import React from "react";
+import {React, useEffect, useState} from "react";
 import { Card, Button } from "react-bootstrap";
-import { useState } from "react";
-import { useEffect } from "react";
 import JobAdvertisementService from "../services/JobAdvertisementService";
 import Carousel from "react-multi-carousel";
 
