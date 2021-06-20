@@ -6,4 +6,8 @@ export default class JobAdvertisementService{
     getAll(){
         return axios.get(`${apiUrl}/getall`);
     }
+
+    getRandomTen(){
+        return axios.get(`${apiUrl}/getrandomten`);
+    }
 }
