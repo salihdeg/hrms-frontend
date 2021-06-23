@@ -14,8 +14,8 @@ export default function Navi() {
   return (
     <div>
       <Navbar expand="lg">
-        <Container >
-          <Navbar.Brand href="#">HRMS TEST</Navbar.Brand>
+        <Container>
+          <Navbar.Brand as={NavLink} to="/">HRMS TEST</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -23,8 +23,12 @@ export default function Navi() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link as={NavLink} to="/">Home</Nav.Link>
-              <Nav.Link as={NavLink} to="/advertisements">İlanlar</Nav.Link>
+              <Nav.Link as={NavLink} to="/">
+                Home
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/advertisements">
+                İlanlar
+              </Nav.Link>
               {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
@@ -36,15 +40,24 @@ export default function Navi() {
                 </NavDropdown.Item>
               </NavDropdown> */}
             </Nav>
-            <Form className="d-flex">
+            <Form style={{ marginRight: "15em" }} className="d-flex">
               <FormControl
                 type="search"
-                placeholder="Search"
+                placeholder="Pozisyon Ara"
                 className="mr-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button className="custom-btn">Search</Button>
             </Form>
+            <Button
+              style={{ marginRight: "1em", borderRadius: "10px" }}
+              className="custom-btn"
+            >
+              Login
+            </Button>
+            <Button style={{ borderRadius: "10px" }} className="custom-btn">
+              SignUp
+            </Button>
           </Navbar.Collapse>
         </Container>
       </Navbar>
