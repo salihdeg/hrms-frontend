@@ -10,4 +10,12 @@ export default class JobAdvertisementService{
     getRandomTen(){
         return axios.get(`${apiUrl}/getrandomten`);
     }
+
+    getById(id){
+        return axios.get(`${apiUrl}/getbyid?id=${id}`)
+    }
+
+    add(jobAdvertisement){
+        return axios.post(`${apiUrl}/add`,jobAdvertisement);
+    }
 }
