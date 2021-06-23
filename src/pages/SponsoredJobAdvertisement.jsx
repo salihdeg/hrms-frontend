@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import JobAdvertisementService from "../services/JobAdvertisementService";
 import Carousel from "react-multi-carousel";
+import { NavLink } from "react-router-dom";
 
 export default function SponsoredJobAdvertisement() {
   const [sponsoredAdvertisements, setSponsoredAdvertisements] = useState([]);
@@ -49,7 +50,7 @@ export default function SponsoredJobAdvertisement() {
       renderButtonGroupOutside
     >
       {sponsoredAdvertisements.map((advertisement) => (
-        <Card>
+        <Card key={advertisement.id}>
           <Card.Body>
             <Card.Title>{advertisement.position.name}</Card.Title>
             {advertisement.description.length > 30 ? (
@@ -61,7 +62,7 @@ export default function SponsoredJobAdvertisement() {
               <Card.Text>{advertisement.description}</Card.Text>
             )}
 
-            <Button className="custom-btn" >Detaya Git</Button>
+            <Button as={NavLink} to={`advertisements/${advertisement.id}`} className="custom-btn" >Detaya Git</Button>
           </Card.Body>
         </Card>
       ))}
