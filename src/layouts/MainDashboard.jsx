@@ -8,6 +8,7 @@ export default function MainDashboard() {
     <div>
       <MainCarousels />
       <div style={{ marginTop: "4em" }}>
+        <h1 style={{textAlign:"left"}}>Öne Çıkan İlanlar</h1>
         <SponsoredJobAdvertisement />
       </div>
     </div>
