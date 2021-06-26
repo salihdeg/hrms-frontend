@@ -20,7 +20,7 @@ export default function JobAdvertisementDetail() {
   if (jobAdvertisement.id > 0) {
     return (
       <Container style={{ display: "block" }}>
-        <Row style={{ textAlign: "center", backgroundColor: "#adadad" }}>
+        <Row style={{ textAlign: "center", backgroundColor: "#f4f4f4" }}>
           <Col style={{ float: "left", textAlign: "left" }}>
             <h3>{jobAdvertisement.position.name}</h3>
             <p>
@@ -29,7 +29,7 @@ export default function JobAdvertisementDetail() {
             </p>
           </Col>
         </Row>
-        <Row>
+        <Row style={{ marginTop: "2em" }}>
           <Col md={9}>
             <h4 style={{ color: "#ff8928" }}>Genel Nitelikler ve İş Tanımı</h4>
             <p>{jobAdvertisement.description}</p>
@@ -38,15 +38,30 @@ export default function JobAdvertisementDetail() {
             <Card>
               <Card.Body>
                 <Card.Title>{jobAdvertisement.employer.companyName}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Card Subtitle
-                </Card.Subtitle>
+
+                <a href={`https://${jobAdvertisement.employer.webSite}`}>
+                  <Card.Subtitle className="mb-2 text-muted">
+                    {jobAdvertisement.employer.webSite}
+                  </Card.Subtitle>
+                </a>
                 <Card.Text>
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
-                <Button className="custom-btn" as={NavLink} to="/employerid/advertisements">Diğer İlanlar</Button>
-                <Card.Link href="#">Another Link</Card.Link>
+                <Button
+                  className="custom-btn"
+                  as={NavLink}
+                  to="/employerid/advertisements"
+                >
+                  Diğer İlanlar
+                </Button>
+                <Button
+                  className="custom-btn"
+                  as={NavLink}
+                  to="/employer/employerid"
+                >
+                  Profile Git
+                </Button>
               </Card.Body>
             </Card>
           </Col>
