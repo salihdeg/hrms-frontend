@@ -9,6 +9,8 @@ import {
   FormControl,
 } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import SignedOut from "./SignedOut";
+// import SignedIn from "./SignedIn";
 
 export default function Navi() {
   return (
@@ -49,15 +51,8 @@ export default function Navi() {
               />
               <Button className="custom-btn">Search</Button>
             </Form>
-            <Button
-              style={{ marginRight: "1em", borderRadius: "10px" }}
-              className="custom-btn"
-            >
-              Login
-            </Button>
-            <Button style={{ borderRadius: "10px" }} className="custom-btn">
-              SignUp
-            </Button>
+            <SignedOut/>
+            {/* <SignedIn/> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
