@@ -39,7 +39,7 @@ export default function JobAdvertisementDetail() {
               <Card.Body>
                 <Card.Title>{jobAdvertisement.employer.companyName}</Card.Title>
 
-                <a href={`https://${jobAdvertisement.employer.webSite}`}>
+                <a target="blank" href={`https://${jobAdvertisement.employer.webSite}`}>
                   <Card.Subtitle className="mb-2 text-muted">
                     {jobAdvertisement.employer.webSite}
                   </Card.Subtitle>
