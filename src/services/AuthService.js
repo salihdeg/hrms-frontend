@@ -6,4 +6,7 @@ export default class AuthService {
   employerRegister(employer) {
     return axios.post(`${apiUrl}/employerRegister`, employer);
   }
+  login(user) {
+    return axios.post(`${apiUrl}/login`, user);
+  }
 }
