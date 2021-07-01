@@ -1,11 +1,6 @@
 import { React, useState, useEffect } from "react";
-import {
-  Card,
-  Row,
-  Col,
-  Container,
-} from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import { Card, Row, Col, Container, Button } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
 import { NavLink } from "react-router-dom";
 import JobAdvertisementService from "../services/JobAdvertisementService";
 
@@ -21,36 +16,45 @@ export default function JobAdvertisements() {
 
   return (
     <Container>
-      <Row md={1}>
-        {advertisements.map((advertisement) => (
-          <Col style={{ marginBottom: "1em", textAlign: "left" }}>
-            <Card key={advertisement.id}>
-              <Card.Body>
-                <Card.Title>{advertisement.position.name}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                  {advertisement.employer.companyName}
-                </Card.Subtitle>
-                {advertisement.description.length > 50 ? (
-                  <Card.Text>{`${advertisement.description.substring(0,50)}...`}</Card.Text>
-                ) : (
-                  <Card.Text>{advertisement.description}</Card.Text>
-                )}
-                <Card.Subtitle className="mb-2 text-muted">
-                  {advertisement.city.name}
-                </Card.Subtitle>
-                <Button
-                  as={NavLink}
-                  to={`/advertisements/${advertisement.id}`}
-                  className="custom-btn"
-                  variant="primary"
-                >
-                  Detaya Git
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+      {advertisements === [] ? (
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden"></span>
+        </Spinner>
+      ) : (
+        <Row md={1}>
+          {advertisements.map((advertisement) => (
+            <Col style={{ marginBottom: "1em", textAlign: "left" }}>
+              <Card key={advertisement.id}>
+                <Card.Body>
+                  <Card.Title>{advertisement.position.name}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">
+                    {advertisement.employer.companyName}
+                  </Card.Subtitle>
+                  {advertisement.description.length > 50 ? (
+                    <Card.Text>{`${advertisement.description.substring(
+                      0,
+                      50
+                    )}...`}</Card.Text>
+                  ) : (
+                    <Card.Text>{advertisement.description}</Card.Text>
+                  )}
+                  <Card.Subtitle className="mb-2 text-muted">
+                    {advertisement.city.name}
+                  </Card.Subtitle>
+                  <Button
+                    as={NavLink}
+                    to={`/advertisements/${advertisement.id}`}
+                    className="custom-btn"
+                    variant="primary"
+                  >
+                    Detaya Git
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      )}
     </Container>
 
     // <Table striped bordered hover >
