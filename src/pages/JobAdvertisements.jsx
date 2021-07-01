@@ -23,8 +23,8 @@ export default function JobAdvertisements() {
       ) : (
         <Row md={1}>
           {advertisements.map((advertisement) => (
-            <Col style={{ marginBottom: "1em", textAlign: "left" }}>
-              <Card key={advertisement.id}>
+            <Col key={advertisement.id} style={{ marginBottom: "1em", textAlign: "left" }}>
+              <Card>
                 <Card.Body>
                   <Card.Title>{advertisement.position.name}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">
