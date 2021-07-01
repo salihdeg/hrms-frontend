@@ -11,3 +11,8 @@
   background-color: #ff8928 !important;
   border: none !important;
 }
+
+.errorText{
+  color:red;
+  position: absolute;
+}
