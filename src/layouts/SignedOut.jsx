@@ -15,7 +15,7 @@ export default function SignedOut() {
         id="navbarScrollingDropdown"
       >
         <NavDropdown.Item as={NavLink} to="/login">Giriş Yap</NavDropdown.Item>
-        <NavDropdown.Item href="#">Üye Ol</NavDropdown.Item>
+        <NavDropdown.Item as={NavLink} to="/register/worker">Üye Ol</NavDropdown.Item>
       </NavDropdown>
       <NavDropdown
         style={{ borderRadius: "8px", backgroundColor: "#ff8928" }}
