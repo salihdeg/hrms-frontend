@@ -10,14 +10,20 @@ import {
 } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import SignedOut from "./SignedOut";
-// import SignedIn from "./SignedIn";
+import { useState } from "react";
+import SignedIn from "./SignedIn";
 
 export default function Navi() {
+  // eslint-disable-next-line no-unused-vars
+  const [isAuthenticated, setAuthenticated] = useState(false);
+
   return (
     <div>
       <Navbar expand="lg">
         <Container>
-          <Navbar.Brand as={NavLink} to="/">HRMS TEST</Navbar.Brand>
+          <Navbar.Brand as={NavLink} to="/">
+            HRMS TEST
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -51,8 +57,7 @@ export default function Navi() {
               />
               <Button className="custom-btn">Search</Button>
             </Form>
-            <SignedOut/>
-            {/* <SignedIn/> */}
+            {isAuthenticated ? <SignedIn /> : <SignedOut />}
           </Navbar.Collapse>
         </Container>
       </Navbar>

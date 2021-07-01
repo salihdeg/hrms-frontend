@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import JobAdvertisementAdd from "./pages/JobAdvertisementAdd";
 
 function App() {
+
   return (
     <div className="App">
       <ToastContainer position="bottom-right" />
