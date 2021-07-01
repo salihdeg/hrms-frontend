@@ -7,6 +7,7 @@ import FindJobDashboard from "./layouts/FindJobDashboard";
 import JobAdvertisementDetail from "./pages/JobAdvertisementDetail";
 import LoginDashboard from "./layouts/LoginDashboard";
 import { ToastContainer } from "react-toastify";
+import JobAdvertisementAdd from "./pages/JobAdvertisementAdd";
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
       <Container className="main-container">
         <Route exact path="/" component={MainDashboard} />
         <Route exact path="/login" component={LoginDashboard} />
+        <Route exact path="/register/worker" component={LoginDashboard} />
         <Route exact path="/advertisements" component={FindJobDashboard} />
+        <Route exact path="/advertisements/add" component={JobAdvertisementAdd} />
         <Route path="/advertisements/:id" component={JobAdvertisementDetail} />
       </Container>
       {/* TODO: Buraya Footer Yaz */}
