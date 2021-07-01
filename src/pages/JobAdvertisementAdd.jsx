@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 export default function JobAdvertisementAdd() {
-    return (
-        <div>
-            
-        </div>
-    )
+  const jobAdvertisementValues = {};
+
+  return <div></div>;
 }
