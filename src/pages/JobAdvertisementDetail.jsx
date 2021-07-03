@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 export default function JobAdvertisementDetail() {
   let { id } = useParams();
 
-  const [jobAdvertisement, setJobAdvertisement] = useState({});
+  const [jobAdvertisement, setJobAdvertisement] = useState([]);
 
   useEffect(() => {
     let jobAdvertisementService = new JobAdvertisementService();
@@ -38,16 +38,27 @@ export default function JobAdvertisementDetail() {
             <Card>
               <Card.Body>
                 <Card.Title>{jobAdvertisement.employer.companyName}</Card.Title>
-
-                <a target="blank" href={`https://${jobAdvertisement.employer.webSite}`}>
+                <a
+                  target="blank"
+                  href={`https://${jobAdvertisement.employer.webSite}`}
+                >
                   <Card.Subtitle className="mb-2 text-muted">
                     {jobAdvertisement.employer.webSite}
                   </Card.Subtitle>
                 </a>
+                {/* TODO: Buraya İlanın Çalışma Şekli Ve Çalışma Zamanı Gelecek!
                 <Card.Text>
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
-                </Card.Text>
+                </Card.Text> */}
+                <a
+                  target="blank"
+                  href={`mailto:${jobAdvertisement.employer.email}`}
+                >
+                  <Card.Subtitle className="mb-2 text-muted">
+                    {jobAdvertisement.employer.email}
+                  </Card.Subtitle>
+                </a>
                 <Button
                   className="custom-btn"
                   as={NavLink}
@@ -69,10 +80,6 @@ export default function JobAdvertisementDetail() {
       </Container>
     );
   } else {
-    return (
-      <Container>
-        <div>BOŞ</div>
-      </Container>
-    );
+    return null;
   }
 }
