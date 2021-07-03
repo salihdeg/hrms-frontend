@@ -8,6 +8,7 @@ import JobAdvertisementDetail from "./pages/JobAdvertisementDetail";
 import LoginDashboard from "./layouts/LoginDashboard";
 import { ToastContainer } from "react-toastify";
 import JobAdvertisementAdd from "./pages/JobAdvertisementAdd";
+import EmployerDashboard from "./layouts/EmployerDashboard";
 
 function App() {
 
@@ -17,11 +18,12 @@ function App() {
       <Navi />
       <Container className="main-container">
         <Route exact path="/" component={MainDashboard} />
+        <Route exact path="/employer/admin" component={EmployerDashboard} />
         <Route exact path="/login" component={LoginDashboard} />
         <Route exact path="/register/worker" component={LoginDashboard} />
         <Route exact path="/advertisements" component={FindJobDashboard} />
-        <Route exact path="/advertisements/add" component={JobAdvertisementAdd} />
-        <Route path="/advertisements/:id" component={JobAdvertisementDetail} />
+        <Route exact strict path="/advertisements/:id" component={JobAdvertisementDetail} />
+        <Route exact strict path="/advertisement/add" component={JobAdvertisementAdd} />
       </Container>
       {/* TODO: Buraya Footer Yaz */}
     </div>
