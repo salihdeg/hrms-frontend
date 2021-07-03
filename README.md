@@ -1,3 +1,30 @@
+# HRMS Frontend Project
+This project created for [HRMS Backend Project](https://github.com/salihdeg/hrmsBackendProject)
+
+## Images From Project
+
+<details>
+<summary> <b> <em> Click here for how to use. </em> </b> </summary>
+
+### :pushpin: Home Page
+![homepage](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/hrmsFrontendImages/01-HomePage.png)
+
+### :pushpin: Job Advertisements List
+![jobadvertisementlist](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/hrmsFrontendImages/02-AdvertisementsList.png)
+
+### :pushpin: Login Page
+![loginpage](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/hrmsFrontendImages/03-LoginPage.png)
+
+### :pushpin: Employer Control Panel
+![employercontrolpanel](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/hrmsFrontendImages/04-EmployerControlPanel.png)
+
+</details>
+
+## Usage
+
+<details>
+    <summary> <b> <em> Click here for how to use. </em> </b> </summary>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +95,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+</details>
