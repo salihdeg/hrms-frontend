@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-multi-carousel/lib/styles.css";
 import "react-toastify/dist/ReactToastify.min.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 ReactDOM.render(
   <BrowserRouter>
