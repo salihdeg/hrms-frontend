@@ -16,3 +16,8 @@
   color:red;
   position: absolute;
 }
+
+.all-hover:hover{
+  transform: scale(1.1);
+  transition: all 05.s ease-in-out;
+}

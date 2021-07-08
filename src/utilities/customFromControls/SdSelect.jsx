@@ -7,7 +7,7 @@ export default function SdSelect({ onChange, options, value, className, labelNam
   };
 
   return (
-    <div className="mb-2">
+    <div className="mb-2" style={{paddingBottom:"1rem"}}>
       <label htmlFor={labelName}>{labelName}</label>
       <div className={className}>
         <Select

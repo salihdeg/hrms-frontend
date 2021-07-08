@@ -50,7 +50,7 @@ export default function SponsoredJobAdvertisement() {
       renderButtonGroupOutside
     >
       {sponsoredAdvertisements.map((advertisement) => (
-        <Card key={advertisement.id}>
+        <Card className="all-hover" key={advertisement.id}>
           <Card.Body>
             <Card.Title>{advertisement.position.name}</Card.Title>
             {advertisement.description.length > 30 ? (

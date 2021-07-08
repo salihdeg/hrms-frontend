@@ -17,7 +17,7 @@ export default function Navi() {
   const [isAuthenticated, setAuthenticated] = useState(false);
 
   return (
-    <Navbar expand="lg">
+    <Navbar collapseOnSelect expand="lg">
       <Container>
         <Navbar.Brand as={NavLink} to="/">
           HRMS TEST
@@ -29,10 +29,10 @@ export default function Navi() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link as={NavLink} to="/">
+            <Nav.Link className="all-hover" as={NavLink} to="/">
               Home
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/advertisements">
+            <Nav.Link className="all-hover" as={NavLink} to="/advertisements">
               İlanlar
             </Nav.Link>
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
