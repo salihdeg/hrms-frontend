@@ -18,7 +18,7 @@ function App() {
       <Navi />
       <Container className="main-container">
         <Route exact path="/" component={MainDashboard} />
-        <Route exact path="/employer/admin" component={EmployerDashboard} />
+        <Route exact path="/control/employer" component={EmployerDashboard} />
         <Route exact path="/login" component={LoginDashboard} />
         <Route exact path="/register/worker" component={LoginDashboard} />
         <Route exact path="/advertisements" component={FindJobDashboard} />
