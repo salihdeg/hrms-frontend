@@ -12,11 +12,14 @@ export default function LoginPage() {
     email: Yup.string()
       .email("Eposta Geçerli Değil")
       .required("Email Alanı Zorunludur"),
-    password: Yup.string()
-      .required("Şifre Alanı Zorunludur"),
+    password: Yup.string().required("Şifre Alanı Zorunludur"),
   });
 
   //confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], "Password Must Match")
+  
+  const saveLoginInfo = (result) => {
+    localStorage.setItem("loggedUser", JSON.stringify(result.data.data));
+  }
 
   let authService = new AuthService();
 
@@ -24,6 +27,7 @@ export default function LoginPage() {
     authService.login(user).then((result) => {
       if (result.data.success) {
         toast.success(result.data.message);
+        saveLoginInfo(result);
       } else {
         toast.error(result.data.message);
       }
@@ -43,7 +47,11 @@ export default function LoginPage() {
           <Form>
             <SdTextInput label="Eposta" name="email" type="email" />
             <SdTextInput label="Şifre" name="password" type="password" />
-            <Button style={{marginTop:"2rem"}} className="custom-btn" type="submit">
+            <Button
+              style={{ marginTop: "2rem" }}
+              className="custom-btn"
+              type="submit"
+            >
               Giriş Yap
             </Button>
           </Form>
